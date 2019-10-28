@@ -3,6 +3,9 @@ using System.IO;
 using System.Threading;
 using Watcher;
 
+/// <summary>
+/// By Daniel Nehrig
+/// </summary>
 namespace Program {
   class Program {
     static int Main(string[] args) {
@@ -24,22 +27,23 @@ namespace Program {
       Thread t = new Thread(new ThreadStart(watcher.Watch));
       t.Start();
 
+      // Exit Gracefully
       return 0;
     }
 
-    static void Added(object sender, EventArgs e) {
+    static void Added(object sender, FileEventArgs e) {
       // Do Add Logic
-      Console.WriteLine("Something was added to the Directory");
+      Console.WriteLine(String.Format("Something was Added in the Directory : {0}", e.FileName));
     }
 
-    static void Changed(object sender, EventArgs e) {
+    static void Changed(object sender, FileEventArgs e) {
       // Do Changed Logic
-      Console.WriteLine("Something was changed in the Directory");
+      Console.WriteLine(String.Format("Something was Changed in the Directory : {0}", e.FileName));
     }
 
-    static void Deleted(object sender, EventArgs e) {
+    static void Deleted(object sender, FileEventArgs e) {
       // Do Deleted Logic
-      Console.WriteLine("Something was Deleted in the Directory");
+      Console.WriteLine(String.Format("Something was Deleted in the Directory : {0}", e.FileName));
     }
   }
 }

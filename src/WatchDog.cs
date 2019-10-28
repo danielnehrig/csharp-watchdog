@@ -5,9 +5,14 @@ using System.Threading;
 using System.Collections.Generic;
 
 /// <summary>
-/// Watching Files in a Directory
+/// WatchDog namespace Watcher
+/// By Daniel Nehrig
 /// </summary>
 namespace Watcher {
+  /// <summary>
+  /// File Object Buffer for use in List to compare
+  /// and extract data from
+  /// </summary>
   class FileObj {
     public string FileName { get; set; }
     public DateTime LastChanged { get; set; }
@@ -18,6 +23,9 @@ namespace Watcher {
     }
   }
 
+  /// <summary>
+  /// Watching Files in a Directory
+  /// </summary>
   class WatchDog {
     private string folder;
     private int sleepTime;
@@ -47,6 +55,7 @@ namespace Watcher {
       List<FileObj> list = new List<FileObj>();
       string[] files = Directory.GetFiles(folder);
 
+      // Check if files can be found in folder
       if (files != null) {
         foreach (string fileName in files) {
           DateTime time = File.GetCreationTime(fileName);
@@ -58,7 +67,10 @@ namespace Watcher {
       if (temp != null) {
         List<FileObj> result = list.Where(n => !temp.Select(n1 => n1.FileName).Contains(n.FileName)).ToList();
         foreach(FileObj item in result) {
-          OnFileAdded(EventArgs.Empty);
+          FileEventArgs createdArgs = new FileEventArgs();
+          createdArgs.FileName = item.FileName;
+          createdArgs.LastChanged = item.LastChanged;
+          OnFileAdded(createdArgs);
         }
       }
 
@@ -67,7 +79,10 @@ namespace Watcher {
       if (temp != null) {
         List<FileObj> result = temp.Where(n => !list.Select(n1 => n1.FileName).Contains(n.FileName)).ToList();
         foreach(FileObj item in result) {
-          OnFileDeleted(EventArgs.Empty);
+          FileEventArgs deletedArgs = new FileEventArgs();
+          deletedArgs.FileName = item.FileName;
+          deletedArgs.LastChanged = item.LastChanged;
+          OnFileDeleted(deletedArgs);
         }
       }
 
@@ -78,7 +93,10 @@ namespace Watcher {
           for (int k = 0; k < temp.Count; k++) {
             FileObj tempFile = temp[k];
             if (file.FileName == tempFile.FileName && file.LastChanged != tempFile.LastChanged) {
-              OnFileChanged(EventArgs.Empty);
+              FileEventArgs changedArgs = new FileEventArgs();
+              changedArgs.FileName = file.FileName;
+              changedArgs.LastChanged = file.LastChanged;
+              OnFileChanged(changedArgs);
             }
           }
         }
@@ -87,22 +105,22 @@ namespace Watcher {
       temp = list;
     }
 
-    protected virtual void OnFileAdded(EventArgs e) {
-      EventHandler handler = Added;
+    protected virtual void OnFileAdded(FileEventArgs e) {
+      EventHandler<FileEventArgs> handler = Added;
       if (handler != null) {
         handler(this, e);
       }
     }
 
-    protected virtual void OnFileChanged(EventArgs e) {
-      EventHandler handler = Changed;
+    protected virtual void OnFileChanged(FileEventArgs e) {
+      EventHandler<FileEventArgs> handler = Changed;
       if (handler != null) {
         handler(this, e);
       }
     }
 
-    protected virtual void OnFileDeleted(EventArgs e) {
-      EventHandler handler = Deleted;
+    protected virtual void OnFileDeleted(FileEventArgs e) {
+      EventHandler<FileEventArgs> handler = Deleted;
       if (handler != null) {
         handler(this, e);
       }
@@ -111,16 +129,24 @@ namespace Watcher {
     /// <summary>
     /// Added Item EventHandler
     /// </summary>
-    public event EventHandler Added;
+    public event EventHandler<FileEventArgs> Added;
 
     /// <summary>
     /// Changed Item EventHandler
     /// </summary>
-    public event EventHandler Changed;
+    public event EventHandler<FileEventArgs> Changed;
 
     /// <summary>
     /// Deleted Item EventHandler
     /// </summary>
-    public event EventHandler Deleted;
+    public event EventHandler<FileEventArgs> Deleted;
+  }
+
+  /// <summary>
+  /// File Event Arguments extends EventArgs
+  /// </summary>
+  public class FileEventArgs : EventArgs {
+    public string FileName { get; set; }
+    public DateTime LastChanged { get; set; }
   }
 }
