@@ -19,3 +19,8 @@ which can be passed into the created object
 - obj.Added += method
 - obj.Deleted += method
 - obj.Changed += method
+
+## How to Use
+
+The Program will create a folder called
+"watch" in the context where the program has been started
