@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 /// <summary>
 /// WatchDog namespace Watcher
-/// By Daniel Nehrig
+/// By Daniel Nehrig & Bjarne Christal
 /// </summary>
 namespace Watcher {
   /// <summary>
@@ -43,6 +43,7 @@ namespace Watcher {
     public void Watch() {
       // Main Watch Loop
       while (!keyPressed) {
+        // Do the watch once then wait
         DoWatch();
         Thread.Sleep(sleepTime);
       }
@@ -64,6 +65,7 @@ namespace Watcher {
       }
 
       // Created
+      // Compare the two lists and get the difference
       if (temp != null) {
         List<FileObj> result = list.Where(n => !temp.Select(n1 => n1.FileName).Contains(n.FileName)).ToList();
         foreach(FileObj item in result) {
@@ -76,6 +78,8 @@ namespace Watcher {
 
 
       // Deleted
+      // Compare the two lists and get the difference
+      // same as created but inverted
       if (temp != null) {
         List<FileObj> result = temp.Where(n => !list.Select(n1 => n1.FileName).Contains(n.FileName)).ToList();
         foreach(FileObj item in result) {
@@ -87,6 +91,7 @@ namespace Watcher {
       }
 
       // Changed
+      // Compare the creatiion date which is changed if the files has been modified
       if (temp != null) {
         for (int i = 0; i < list.Count; i++) {
           FileObj file = list[i];
@@ -102,6 +107,7 @@ namespace Watcher {
         }
       }
 
+      // Set new list to old list
       temp = list;
     }
 
