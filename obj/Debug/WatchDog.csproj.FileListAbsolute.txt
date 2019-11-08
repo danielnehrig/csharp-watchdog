@@ -1,0 +1,8 @@
+/Users/dnehrig/code/c#/watchdog/obj/Debug/WatchDog.csprojAssemblyReference.cache
+/Users/dnehrig/code/c#/watchdog/obj/Debug/WatchDog.AssemblyInfoInputs.cache
+/Users/dnehrig/code/c#/watchdog/obj/Debug/WatchDog.AssemblyInfo.cs
+/Users/dnehrig/code/c#/watchdog/obj/Debug/WatchDog.dll
+/Users/dnehrig/code/c#/watchdog/obj/Debug/WatchDog.pdb
+/Users/dnehrig/code/c#/watchdog/dist/WatchDog.deps.json
+/Users/dnehrig/code/c#/watchdog/dist/WatchDog.dll
+/Users/dnehrig/code/c#/watchdog/dist/WatchDog.pdb

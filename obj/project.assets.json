@@ -1,0 +1,90 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "WatchDog/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "compile": {
+          "bin/placeholder/WatchDog.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WatchDog.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WatchDog/1.0.0": {
+      "type": "project",
+      "path": "WatchDog.csproj",
+      "msbuildProject": "WatchDog.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.0": [
+      "WatchDog >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/Users/dnehrig/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/dnehrig/code/c#/watchdog/Console.csproj",
+      "projectName": "Console",
+      "projectPath": "/Users/dnehrig/code/c#/watchdog/Console.csproj",
+      "packagesPath": "/Users/dnehrig/.nuget/packages/",
+      "outputPath": "/Users/dnehrig/code/c#/watchdog/obj/",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "/Users/dnehrig/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "projectReferences": {
+            "/Users/dnehrig/code/c#/watchdog/WatchDog.csproj": {
+              "projectPath": "/Users/dnehrig/code/c#/watchdog/WatchDog.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.0": {
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

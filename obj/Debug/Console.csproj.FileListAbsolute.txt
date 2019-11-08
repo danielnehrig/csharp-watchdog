@@ -1,0 +1,13 @@
+/Users/dnehrig/code/c#/watchdog/dist/Console
+/Users/dnehrig/code/c#/watchdog/dist/Console.deps.json
+/Users/dnehrig/code/c#/watchdog/dist/Console.runtimeconfig.json
+/Users/dnehrig/code/c#/watchdog/dist/Console.runtimeconfig.dev.json
+/Users/dnehrig/code/c#/watchdog/dist/Console.dll
+/Users/dnehrig/code/c#/watchdog/dist/Console.pdb
+/Users/dnehrig/code/c#/watchdog/dist/WatchDog.pdb
+/Users/dnehrig/code/c#/watchdog/obj/Debug/Console.csprojAssemblyReference.cache
+/Users/dnehrig/code/c#/watchdog/obj/Debug/Console.AssemblyInfoInputs.cache
+/Users/dnehrig/code/c#/watchdog/obj/Debug/Console.AssemblyInfo.cs
+/Users/dnehrig/code/c#/watchdog/obj/Debug/Console.csproj.CopyComplete
+/Users/dnehrig/code/c#/watchdog/obj/Debug/Console.dll
+/Users/dnehrig/code/c#/watchdog/obj/Debug/Console.pdb

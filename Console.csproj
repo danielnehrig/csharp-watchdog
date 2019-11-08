@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <UseNETCoreGenerator>true</UseNETCoreGenerator>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>dist</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="dist\**" />
+    <Compile Remove="src\CoolList\**" />
+    <Compile Remove="src\__test__\**" />
+    <EmbeddedResource Remove="dist\**" />
+    <EmbeddedResource Remove="src\CoolList\**" />
+    <EmbeddedResource Remove="src\__test__\**" />
+    <None Remove="dist\**" />
+    <None Remove="src\CoolList\**" />
+    <None Remove="src\__test__\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="WatchDog.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -12,6 +12,7 @@ namespace Program {
       string folderName = "watch";
       int waitTime = 500;
 
+
       // Check if Directory Exists if not add
       if (!Directory.Exists(folderName)) {
         Directory.CreateDirectory(folderName);

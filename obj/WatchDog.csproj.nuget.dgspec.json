@@ -1,0 +1,58 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/dnehrig/code/c#/watchdog/WatchDog.csproj": {}
+  },
+  "projects": {
+    "/Users/dnehrig/code/c#/watchdog/WatchDog.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/dnehrig/code/c#/watchdog/WatchDog.csproj",
+        "projectName": "WatchDog",
+        "projectPath": "/Users/dnehrig/code/c#/watchdog/WatchDog.csproj",
+        "packagesPath": "/Users/dnehrig/.nuget/packages/",
+        "outputPath": "/Users/dnehrig/code/c#/watchdog/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/dnehrig/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
